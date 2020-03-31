@@ -16,9 +16,9 @@ function updatevalue(){
     document.getElementById("CITYOutput").innerHTML = `CITY: ${CITY}`;
 }*/
 
-var personData = [];
+let personData = [];
 
-var jsDOM = {
+let jsDOM = {
     data: {
         FIRSTNAME: document.getElementById("FIRSTNAMEINPUT"),
         LASTNAME: document.getElementById("LASTNAMEINPUT"),
@@ -34,7 +34,7 @@ var jsDOM = {
     personData: document.getElementById('personData')
 };
 
-var jsFunc = {
+let jsFunc = {
 
     myFunction : () => {
         jsDOM.FIRSTNAMEOutput.innerHTML = `FIRST NAME: ${jsDOM.FIRSTNAME.value}`;
@@ -45,24 +45,24 @@ var jsFunc = {
 
     },
     showData: () => {
-        var parentDiv = jsDOM.personData;
+        let parentDiv = jsDOM.personData;
         parentDiv.innerHTML= '';
 
-        var node = document.createElement("div");
+        let node = document.createElement("div");
 
-        var nodeHeader = document.createElement("h3");
-        var nodeHeaderText = document.createTextNode("person Data");
+        let nodeHeader = document.createElement("h3");
+        let nodeHeaderText = document.createTextNode("person Data");
         nodeHeader.appendChild(nodeHeaderText);
 
         node.appendChild(nodeHeader);
 
-        var fullname, email, phone;
+        let fullname, email, phone;
 
         personData.forEach(x => {
-            var fullname = `${x.firstname} ${x.lastname}` , email=x.email, phone=x.phone;
+            let fullname = `${x.firstname} ${x.lastname}` , email=x.email, phone=x.phone;
             
-            var personData = document.createElement('p');
-            var personDataText = document.createTextNode(`Name: ${fullname} Email: ${email} Phone: ${phone}`);
+            let personData = document.createElement('p');
+            let personDataText = document.createTextNode(`Name: ${fullname} Email: ${email} Phone: ${phone}`);
 
             personData.appendChild(personDataText);
             node.appendChild(personData);
